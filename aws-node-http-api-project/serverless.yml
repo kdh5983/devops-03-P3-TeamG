@@ -1,0 +1,15 @@
+service: aws-node-http-api-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-northeast-2
+
+functions:
+  api:
+    handler: index.hello
+    events:
+      - httpApi:
+          method: POST
+          path: /
